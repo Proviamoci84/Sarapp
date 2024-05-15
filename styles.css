@@ -1,0 +1,125 @@
+body {
+    background-color: #FFC0CB; /* Sfondo rosa */
+    font-family: Arial, sans-serif;
+    background-image: url('https://cdn.pixabay.com/photo/2018/08/28/12/46/unicorn-3637428_1280.png'), url('https://png.pngtree.com/thumb_back/fw800/background/20190221/ourmid/pngtree-cute-unicorn-love-heart-stars-color-fantasy-background-image_60945.jpg'); /* Immagine dell'unicorno sovrapposta all'immagine di sfondo con stelline */
+    background-blend-mode: overlay; /* Sovrapposizione delle immagini di sfondo */
+    background-position: center bottom, center; /* Posizionamento al centro in basso per l'immagine dell'unicorno, al centro per l'immagine di sfondo con stelline */
+    background-size: auto 70%, cover; /* Dimensioni dell'immagine dell'unicorno regolate a 70% dell'altezza del body, adatta l'immagine di sfondo alla dimensione del contenitore */
+    --bianco: #ffffff; /* Definizione del colore bianco */
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative; /* Posizionamento relativo per il contenitore dell'intestazione */
+}
+
+header h1.app-title {
+    color: #000; /* Testo nero per il titolo */
+    font-weight: bold; /* Testo in grassetto */
+    font-style: italic; /* Testo corsivo */
+    position: relative; /* Posizionamento relativo per il titolo */
+}
+
+header::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 10px; /* Altezza del rettangolo */
+    background-color: rgba(255, 192, 203, 0.7); /* Colore rosa chiaro */
+    position: absolute; /* Posizionamento assoluto rispetto all'intestazione */
+    bottom: -10px; /* Allineamento in fondo all'intestazione */
+    left: 0; /* Allineamento a sinistra rispetto all'intestazione */
+    border-radius: 10px 10px 0 0; /* Bordi arrotondati solo in alto */
+}
+
+main {
+    display: flex;
+    justify-content: space-around;
+    position: relative; /* Posizionamento relativo per il contenitore principale */
+}
+
+#CoseDaFare, .done-section {
+    width: 45%;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    position: relative; /* Posizionamento relativo per le sezioni */
+    z-index: 1; /* Imposta uno z-index per far risaltare le sezioni sopra lo sfondo */
+}
+
+#CoseDaFare::before,
+.done-section::before {
+    content: '';
+    background-image: url('https://cdn.pixabay.com/photo/2018/08/28/12/46/unicorn-3637428_1280.png'), url('https://png.pngtree.com/thumb_back/fw800/background/20190221/ourmid/pngtree-cute-unicorn-love-heart-stars-color-fantasy-background-image_60945.jpg'); /* Immagine dell'unicorno sovrapposta all'immagine di sfondo con stelline */
+    background-blend-mode: overlay; /* Sovrapposizione delle immagini di sfondo */
+    background-position: center bottom, center; /* Posizionamento al centro in basso per l'immagine dell'unicorno, al centro per l'immagine di sfondo con stelline */
+    background-size: auto 70%, cover; /* Dimensioni dell'immagine dell'unicorno regolate a 70% dell'altezza del body, adatta l'immagine di sfondo alla dimensione del contenitore */
+    position: absolute; /* Posizionamento assoluto rispetto alle sezioni */
+    top: 100%; /* Allineamento all'inizio delle sezioni "Cose da Fare" e "Già Fatto" */
+    left: 0; /* Allineamento a sinistra */
+    width: 100%; /* Larghezza pari a quella delle sezioni */
+    height: 100%; /* Altezza pari a quella delle sezioni */
+}
+
+#CoseDaFare {
+    background-color: #ffffff; /* Sfondo bianco per le task "Cose da Fare" */
+    color: #FF00FF; /* Testo fucsia */
+    font-weight: bold; /* Testo in grassetto */
+}
+
+#CoseDaFare li {
+    color: #FF00FF; /* Testo fucsia per le task nella sezione "Cose da Fare" */
+}
+
+.done-section {
+    background-color: #FF2400; /* Sfondo rosso fuoco per le task "Già Fatto" */
+    color: var(--bianco); /* Testo bianco per le task nella sezione "Già Fatto" */
+    font-weight: bold; /* Testo in grassetto */
+}
+
+.done-section li {
+    text-decoration: line-through; /* Linea sul testo per indicare che è completato */
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    color: var(--bianco); /* Testo bianco per entrambe le sezioni */
+}
+
+input[type="text"] {
+    color: #FF00FF; /* Testo fucsia per l'input della barra di ricerca */
+    width: 300px;
+    height: 30px;
+    font-size: 16px;
+    margin-bottom: 10px; /* Aggiunto margine inferiore per spaziare dal titolo */
+}
+
+/* Stile per il menu a discesa */
+#prioritySelector {
+    width: 100px;
+    height: 30px;
+    font-size: 16px;
+}
+
+/* Stile per la firma */
+.signature {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Font a mano */
+    color: #FFC0CB; /* Colore rosa */
+    border-top: 2px solid #000; /* Bordo nero in alto */
+    background-color: #000; /* Sfondo nero */
+    padding: 40px 0; /* Spaziatura interna raddoppiata */
+    box-sizing: border-box; /* Rispetta il padding nel calcolo della larghezza */
+    font-size: 4em; /* Dimensione del font raddoppiata */
+}

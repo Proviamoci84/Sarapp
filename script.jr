@@ -1,0 +1,61 @@
+// Variabili globali
+let todoList = [];
+let doneList = [];
+
+// Funzione per aggiungere una task
+function addTask(taskName) {
+    const task = {
+        name: taskName,
+        priority: document.getElementById('prioritySelector').value
+    };
+    todoList.push(task);
+    renderTasks();
+}
+
+// Funzione per renderizzare le task
+function renderTasks() {
+    const todoListElement = document.getElementById('todoList');
+    const doneListElement = document.getElementById('doneList');
+
+    // Reset degli elementi della lista
+    todoListElement.innerHTML = '';
+    doneListElement.innerHTML = '';
+
+    // Ordinamento delle task per priorità
+    todoList.sort((a, b) => a.priority - b.priority);
+
+    // Rendering delle task nella sezione "Cose da Fare"
+    todoList.forEach(task => {
+        const li = document.createElement('li');
+        li.textContent = task.name;
+        const span = document.createElement('span');
+        span.textContent = task.priority;
+        li.appendChild(span);
+        todoListElement.appendChild(li);
+    });
+
+    // Rendering delle task nella sezione "Già Fatto"
+    doneList.forEach(task => {
+        const li = document.createElement('li');
+        li.textContent = task.name;
+        doneListElement.appendChild(li);
+    });
+}
+
+// Funzione di inizializzazione
+function init() {
+    const taskInput = document.getElementById('taskInput');
+    taskInput.addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
+            const taskName = taskInput.value.trim();
+            if (taskName !== '') {
+                addTask(taskName);
+                taskInput.value = '';
+            }
+        }
+    });
+}
+
+// Inizializzazione
+init();
+

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le cose da fare di Saretta</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1 class="app-title">Le cose da fare di Saretta</h1>
+        <input type="text" id="taskInput" placeholder="Aggiungi una nuova task...">
+        <select id="prioritySelector">
+            <option value="1">Priorità 1</option>
+            <option value="2">Priorità 2</option>
+            <option value="3">Priorità 3</option>
+            <!-- Aggiungi altre opzioni se necessario -->
+        </select>
+        <button id="sendButton">Invio</button>
+    </header>
+    <main>
+        <section id="CoseDaFare">
+            <h2>Cose da Fare</h2>
+            <ul id="todoList"></ul>
+        </section>
+        <section class="done-section">
+            <h2>Già Fatto</h2>
+            <ul id="doneList"></ul>
+        </section>
+    </main>
+    <footer class="signature">Sara Marrazzo</footer>
+    <script src="script.js"></script>
+</body>
+</html>
